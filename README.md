@@ -1,18 +1,30 @@
-## Getting Started
+# Projeto Singleton em Java
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Este projeto contém três implementações do padrão Singleton em Java, com o objetivo de demonstrar suas diferenças em termos de inicialização, thread-safety e eficiência.
 
-## Folder Structure
+## Implementações
 
-The workspace contains two folders by default, where:
+### 1. Singleton Eager
+- Instância criada no carregamento da classe.
+- Thread-safe.
+- Instância criada mesmo que não seja usada.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+### 2. Singleton Lazy
+- Instância criada somente quando necessária (lazy initialization).
+- Não thread-safe.
+- Pode causar problemas em ambientes multithread.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+### 3. Singleton Lazy Holder
+- Utiliza uma classe interna estática para criação lazy e thread-safe.
+- Não requer sincronização explícita.
+- Abordagem eficiente e recomendada para uso em multithread.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+## Uso
 
-## Dependency Management
+Basta chamar o método estático `getInstancia()` da classe desejada para obter a instância singleton.
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+## Objetivo
+
+Comparar diferentes formas de implementar Singleton, entendendo vantagens, desvantagens e aplicações.
+
+---
